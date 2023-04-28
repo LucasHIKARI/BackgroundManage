@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common_util/common_util.iml" filepath="$PROJECT_DIR$/common/common_util/common_util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/model/model.iml" filepath="$PROJECT_DIR$/model/model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/music_manage.iml" filepath="$PROJECT_DIR$/.idea/music_manage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/service_util/service_util.iml" filepath="$PROJECT_DIR$/common/service_util/service_util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/spring_security/spring_security.iml" filepath="$PROJECT_DIR$/common/spring_security/spring_security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/system_permission/system_permission.iml" filepath="$PROJECT_DIR$/system_permission/system_permission.iml" />
+    </modules>
+  </component>
+</project>

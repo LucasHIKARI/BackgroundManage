@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.music.permission.mapper.SysRoleMapper">
+
+    <resultMap id="BaseResultMap" type="com.music.model.SysRole">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="roleName" column="role_name" jdbcType="VARCHAR"/>
+            <result property="roleCode" column="role_code" jdbcType="VARCHAR"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,role_name,role_code,
+        description,create_time,update_time,
+        is_deleted
+    </sql>
+    <select id="listAll" resultType="com.music.vo.RoleVo">
+        SELECT
+                r.*,
+                a.NAME rightName,
+                a.path path
+        FROM
+                sys_role r
+                        LEFT JOIN sys_role_authority sra ON r.id = sra.role_id
+                        LEFT JOIN sys_authority a ON sra.authority_id = a.id
+        WHERE
+                r.is_deleted = 0
+          AND sra.is_deleted = 0
+          AND a.is_deleted =0
+    </select>
+<!--    <select id="selectListByRoleId" resultType="com.music.model.SysRoleMenu">-->
+<!--        SELECT * from sys_role_authority s where s.role_id=#{roleId} and s.is_deleted=0-->
+<!--    </select>-->
+
+
+
+</mapper>
